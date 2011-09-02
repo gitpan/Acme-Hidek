@@ -14,7 +14,7 @@ elsif($ENV{CONSOLE_ENCODING}) {
     binmode STDOUT, ":raw :encoding($ENV{CONSOLE_ENCODING})";
 }
 
-our $VERSION = '40.0';
+our $VERSION = '41.0';
 
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
@@ -54,11 +54,11 @@ has birthdate => (
 );
 
 sub is_birthday {
-    my $now = Time::Piece->now;
+    my $now = Time::Piece->new;
     return $now->mday == BIRTH_DAY && $now->mon == BIRTH_MONTH;
 }
 
-sub ossan {
+sub ossan40 {
     my @aa = (
         <<'OPPAI'
 　　　 _ 　∩
@@ -107,6 +107,43 @@ OPPAI
     }
 }
 
+sub ossan41 {
+    my @aa = (
+        <<'OPPAI'
+　　／⌒ヽ 
+　 ∩ ＾ω＾）　な　ん　だ 
+　 |　　 ⊂ﾉ 
+　｜　　 _⊃ 
+　 し ⌒ 
+
+ contributed by @mattn_jp.
+OPPAI
+        , <<'OPPAI'
+　　／⌒ヽ 
+　（＾ω＾ ∩　４　１　か 
+　 t⊃　　｜ 
+　⊂_ 　　｜ 
+　　　⌒ J 
+
+ contributed by @mattn_jp.
+OPPAI
+        , <<'OPPAI'
+　　 　 ／⌒ヽ 
+　　　( 　　　　)　　おっおっおっ 
+　　 ／　　、 つ 
+　 （_(__ ⌒)ﾉ 
+　　 ∪ (ノ 
+
+ contributed by @mattn_jp.
+OPPAI
+    );
+
+    for (0..9) {
+        my $a = $aa[$_ % 3];
+        print "\e[2J$a"; sleep 1;
+    }
+}
+
 no Mouse;
 __PACKAGE__->meta->make_immutable();
 __END__
@@ -117,7 +154,7 @@ Acme::Hidek - Virtual net personality, Hidek, age 40
 
 =head1 VERSION
 
-This document describes Acme::Hidek version 40.0.
+This document describes Acme::Hidek version 41.0.
 
 =head1 SYNOPSIS
 
