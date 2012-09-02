@@ -14,7 +14,7 @@ elsif($ENV{CONSOLE_ENCODING}) {
     binmode STDOUT, ":raw :encoding($ENV{CONSOLE_ENCODING})";
 }
 
-our $VERSION = '41.0';
+our $VERSION = '42.0';
 
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
@@ -150,11 +150,11 @@ __END__
 
 =head1 NAME
 
-Acme::Hidek - Virtual net personality, Hidek, age 40
+Acme::Hidek - Virtual net personality, Hidek, age 41
 
 =head1 VERSION
 
-This document describes Acme::Hidek version 41.0.
+This document describes Acme::Hidek version 42.0.
 
 =head1 SYNOPSIS
 
