@@ -1,5 +1,5 @@
 ---
-abstract: 'Virtual net personality, Hidek, age 41'
+abstract: 'Virtual net personality Hidek'
 author:
   - 'Goro Fuji (gfx) <gfuji(at)cpan.org>'
 build_requires:
@@ -33,4 +33,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/gfx/p5-Acme-Hidek.git
-version: 42.0
+version: 43.0
